@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:#F5F5F5 !important;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Little Caesars — $100 Gift Card Reward</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background-color: #F5F5F5 !important; color-scheme: light !important; }
+  body {
+    background-color: #F5F5F5 !important;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex; justify-content: center;
+    color: #1a1a1a;
+  }
+  .page { width: 100%; max-width: 480px; background: #F5F5F5 !important; padding-bottom: 60px; }
+
+  /* ── HERO CARD ── */
+  .hero-wrap { padding: 20px 16px 0; }
+  .hero-card {
+    background: linear-gradient(160deg, #C41230 0%, #8B0000 55%, #5C0000 100%) !important;
+    border-radius: 22px;
+    padding: 36px 24px 32px;
+    text-align: center;
+    box-shadow: 0 16px 48px rgba(140,0,0,0.40), inset 0 1px 0 rgba(255,255,255,0.10);
+    position: relative; overflow: hidden;
+  }
+  .hero-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+  .hero-card::after { content: ''; position: absolute; bottom: -70px; left: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(0,0,0,0.08); }
+  .brand-tag {
+    display: inline-block;
+    border: 1.5px solid rgba(255,255,255,0.40);
+    color: #ffffff !important;
+    font-size: 11px; font-weight: 800;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    padding: 6px 18px; border-radius: 999px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.10);
+  }
+  .hero-amount {
+    font-size: 96px; font-weight: 900;
+    color: #ffffff !important;
+    line-height: 1; letter-spacing: -4px;
+    margin-bottom: 6px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.30);
+  }
+  .hero-label {
+    font-size: 11px; font-weight: 700;
+    color: rgba(255,200,200,0.85) !important;
+    letter-spacing: 0.28em; text-transform: uppercase;
+  }
+
+  /* ── BODY ── */
+  .body-section { padding: 28px 16px 0; }
+  .main-heading {
+    font-size: 24px; font-weight: 800;
+    color: #111111 !important;
+    text-align: center; line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .sub-heading {
+    font-size: 13px; color: #999999 !important;
+    text-align: center; line-height: 1.7;
+    margin-bottom: 26px; padding: 0 8px;
+  }
+
+  /* ── STEPS ── */
+  .steps { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+  .step {
+    background: #ffffff !important;
+    border-radius: 14px; padding: 18px 20px;
+    display: flex; align-items: center; gap: 16px;
+    border: 1px solid #EBEBEB !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .step-num {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, #C41230, #8B0000) !important;
+    color: #ffffff !important;
+    font-size: 17px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(140,0,0,0.35);
+  }
+  .step-text { font-size: 15px; font-weight: 500; color: #222222 !important; }
+
+  /* ── CTA ── */
+  .cta-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; padding: 20px;
+    background: linear-gradient(135deg, #C41230, #8B0000) !important;
+    color: #ffffff !important;
+    border: none; border-radius: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px; font-weight: 800;
+    cursor: pointer; text-decoration: none;
+    box-shadow: 0 8px 24px rgba(140,0,0,0.40), inset 0 1px 0 rgba(255,255,255,0.10);
+    transition: opacity 0.2s, transform 0.1s;
+    margin-bottom: 10px;
+  }
+  .cta-btn:hover { opacity: 0.91; transform: translateY(-1px); }
+  .cta-btn:active { transform: translateY(0); }
+  .cta-sub {
+    text-align: center; font-size: 10px;
+    color: #BBBBBB !important; line-height: 1.6;
+    margin-bottom: 30px; padding: 0 10px;
+  }
+
+  /* ── FAQ ── */
+  .faq-section { border-top: 1px solid #E0E0E0; padding: 22px 0 0; margin-bottom: 28px; }
+  .faq-title {
+    font-size: 18px; font-weight: 800;
+    color: #111111 !important;
+    text-align: center; margin-bottom: 20px;
+  }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid #E0E0E0; }
+  .faq-question {
+    width: 100%; background: transparent !important; border: none;
+    padding: 16px 0; display: flex; align-items: center; justify-content: space-between;
+    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700;
+    color: #111111 !important; cursor: pointer; text-align: left; gap: 10px;
+  }
+  .faq-chevron {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: linear-gradient(135deg, #C41230, #8B0000) !important;
+    color: #ffffff !important;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; flex-shrink: 0;
+    transition: transform 0.25s;
+    box-shadow: 0 2px 6px rgba(140,0,0,0.30);
+  }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+  .faq-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    font-size: 13px; color: #666666 !important; line-height: 1.7; padding: 0;
+  }
+  .faq-item.open .faq-answer { max-height: 200px; padding: 0 0 14px; }
+
+  /* ── TRUST ── */
+  .trust-section {
+    border-top: 1px solid #E0E0E0;
+    padding: 22px 0 0;
+    display: flex; justify-content: center; gap: 32px;
+  }
+  .trust-item { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+  .trust-icon {
+    width: 52px; height: 52px; border-radius: 16px;
+    background: linear-gradient(135deg, #FFE8E8, #FFD0D0) !important;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 8px rgba(140,0,0,0.10);
+  }
+  .trust-icon svg { width: 24px; height: 24px; stroke: #C41230; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .trust-label { font-size: 11px; font-weight: 600; color: #AAAAAA !important; letter-spacing: 0.04em; }
+
+  /* ── NOTIFICATION ── */
+  .notif-popup {
+    position: fixed; top: 16px; left: 50%;
+    transform: translateX(-50%) translateY(-120px);
+    width: calc(100% - 32px); max-width: 358px;
+    background: #ffffff !important;
+    border-radius: 16px; padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+    border-left: 4px solid #C41230 !important;
+    z-index: 9999;
+    transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1), opacity 0.4s ease;
+    opacity: 0;
+  }
+  .notif-popup.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  .notif-av {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, #C41230, #8B0000) !important;
+    color: #ffffff !important; font-size: 15px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .notif-body { flex: 1; min-width: 0; }
+  .notif-nm { font-size: 13px; font-weight: 700; color: #111111 !important; margin-bottom: 2px; }
+  .notif-ms { font-size: 11px; color: #555555 !important; line-height: 1.4; }
+  .notif-tm { font-size: 10px; color: #AAAAAA !important; white-space: nowrap; flex-shrink: 0; }
+  .notif-dot { width: 8px; height: 8px; border-radius: 50%; background: #22C55E !important; flex-shrink: 0; animation: pulse-dot 2s infinite; }
+  @keyframes pulse-dot { 0%,100%{box-shadow:0 0 0 2px rgba(34,197,94,0.25);}50%{box-shadow:0 0 0 5px rgba(34,197,94,0.10);} }
+
+  @media (prefers-color-scheme: dark) {
+    html, body, .page { background-color: #F5F5F5 !important; }
+    .step { background: #ffffff !important; }
+    .main-heading, .faq-title, .faq-question { color: #111111 !important; }
+    .step-text { color: #222222 !important; }
+    .faq-answer { color: #666666 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <div class="hero-card">
+      <div class="brand-tag">Little Caesars</div>
+      <div class="hero-amount">$100</div>
+      <div class="hero-label">Gift Card Reward</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-section">
+    <h1 class="main-heading">Follow the steps below<br>to receive your reward</h1>
+    <p class="sub-heading">Complete each step to qualify. Verification is required before your reward is issued.</p>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Click the button below</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Enter your email &amp; basic info</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Complete 4 to 5 required deals</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Receive your reward once verified</div></div>
+    </div>
+
+    <a href="https://linkthem.net/?offer_id=4335&aff_id=186061" target="_blank" rel="noopener" class="cta-btn">Get Started →</a>
+    <p class="cta-sub">Available in selected countries — US, UK, AU, CA<br>Reward subject to eligibility and offer terms.</p>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">How many deals do I need to complete?<span class="faq-chevron">&#8964;</span></button>
+          <div class="faq-answer">You need to complete 4 to 5 sponsored deals to qualify. Completing all required offers gives you the chance to receive the reward.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">What kind of deals are involved?<span class="faq-chevron">&#8964;</span></button>
+          <div class="faq-answer">Deals include free trials, app downloads, and special offers from our partners.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">When will I receive my reward?<span class="faq-chevron">&#8964;</span></button>
+          <div class="faq-answer">Eligible participants receive their reward within 24-48 hours after all requirements are verified.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRUST -->
+    <div class="trust-section">
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <span class="trust-label">Secure</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg></div>
+        <span class="trust-label">Verified</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <span class="trust-label">Fast</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NOTIFICATION -->
+<div class="notif-popup" id="notifPopup">
+  <div class="notif-av" id="nAv">S</div>
+  <div class="notif-body">
+    <div class="notif-nm" id="nNm">Sarah M.</div>
+    <div class="notif-ms" id="nMs">just received their $100 Little Caesars gift card! 🍕</div>
+  </div>
+  <div class="notif-tm" id="nTm">just now</div>
+  <div class="notif-dot"></div>
+</div>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  const notifs = [
+    {i:'S', n:'Sarah M.',  m:'just received their $100 Little Caesars gift card! 🍕', t:'just now'},
+    {i:'J', n:'James T.',  m:'completed all deals and got rewarded! 🎉',               t:'1 min ago'},
+    {i:'L', n:'Linda K.',  m:'reward verified — gift card sent to email! ✅',          t:'2 mins ago'},
+    {i:'M', n:'Marcus B.', m:'claimed their Little Caesars reward! 🍕',               t:'just now'},
+    {i:'T', n:'Tanya R.',  m:'finished the deals — pizza reward incoming! 🔥',        t:'3 mins ago'},
+    {i:'D', n:'Devon C.',  m:'just got their $100 Little Caesars gift card 🛍️',      t:'1 min ago'},
+    {i:'P', n:'Priya N.',  m:'reward delivered to inbox! 🎉',                         t:'just now'},
+    {i:'K', n:'Kevin W.',  m:'all steps verified — gift card on the way! ✅',         t:'2 mins ago'},
+  ];
+  let idx = 0;
+  const p = document.getElementById('notifPopup');
+  function show() {
+    const n = notifs[idx % notifs.length];
+    document.getElementById('nAv').textContent = n.i;
+    document.getElementById('nNm').textContent = n.n;
+    document.getElementById('nMs').textContent = n.m;
+    document.getElementById('nTm').textContent = n.t;
+    p.classList.add('show');
+    setTimeout(() => p.classList.remove('show'), 4000);
+    idx++;
+  }
+  setTimeout(() => { show(); setInterval(show, 7000); }, 3000);
+</script>
+</body>
+</html>
